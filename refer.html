@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalSoft boost your whatsapp status views</title>
+</head>
+<link rel="stylesheet" href="./assets/css/animate.min.css">
+<link rel="stylesheet" href="./assets/css/aos.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.css">
+<link rel="stylesheet" href="./assets/css/sweetalert2.min.css">
+<script src="./assets/js/sweetalert2@11.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+        <video id="vid" src="./assets/img/tech_atom.mp4" loop muted></video>
+    </div>
+
+    <h1>SweetAlert2 Confirmation Popup Example</h1>
+    <button onclick="confirmDeletion()">Delete Item</button>
+    <button onclick="showSuccess()">Show Success Toast</button>
+    <button onclick="showError()">Show Error Toast</button>
+    <button onclick="showInfo()">Show Info Toast</button>
+    <button onclick="showWarning()">Show Warning Toast</button>
+</body>
+    <script>
+        var vid = document.getElementById('vid');
+        window.onload = ()=>{
+            vid.playbackrate = 0.5;
+            vid.play();
+        }
+          // Function to show success toast
+          function showSuccess() {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: 'This is a success notification!',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        }
+
+        // Function to show error toast
+        function showError() {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'error',
+                title: 'This is an error notification!',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        }
+
+        // Function to show info toast
+        function showInfo() {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'info',
+                title: 'This is an info notification!',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        }
+
+        // Function to show warning toast
+        function showWarning() {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'warning',
+                title: 'This is a warning notification! This is a warning notification!',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        }
+        function confirmDeletion() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Action to perform on confirmation (e.g., delete the item)
+                    Swal.fire(
+                        'Deleted!',
+                        'Your item has been deleted.',
+                        'success'
+                    );
+                } else if (result.isDismissed) {
+                    Swal.fire(
+                        'Cancelled',
+                        'Your item is safe :)',
+                        'error'
+                    );
+                }
+            });
+        }
+    </script>
+<script src="./assets/js/aos.js"></script>
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+</html>

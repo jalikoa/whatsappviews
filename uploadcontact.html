@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalSoft boost your whatsapp status views</title>
+</head>
+<link rel="shortcut icon" href="./assets/img/whatsapp (2).png" type="image/x-icon">
+<link rel="stylesheet" href="./assets/css/animate.min.css">
+<link rel="stylesheet" href="./assets/css/aos.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.css">
+<link rel="stylesheet" href="./assets/css/sweetalert2.min.css">
+<body>
+    <nav class="navbar navbar-expand-md navbar-success wassupgreen-bg">
+        <div class="container-fluid">
+            <a href="./index.html" class="navbar-brand">JalSoft</a>
+            <button data-bs-toggle="collapse" data-bs-target="#navBar" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="uploadcontact.html" class="nav-link text-light">Upload Contact</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="contactscheck.html" class="nav-link">Contacts check</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="resultspage.html" class="nav-link">Results</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="vcfdownload.html" class="nav-link">VCF Download</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="myprofile.html" class="nav-link">My profile</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="faq.html" class="nav-link">FAQ </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class="row row-cols row-cols-sm-1 position-relative">
+            <!-- <img src="./assets/img/whatsapp (2).png" style="width:250px;" alt="" class="position-absolute end-0 top-0 vissible-xl"> -->
+            <img src="./assets/img/whatsapp (1).png" style="width:130px;" alt="" class="img-rounded"><br>
+            <div class="col mt-4 ms-2">
+                <h2 class="wassupgreen">Seamless Contact Uploading</h3>
+            </div>
+            <div class="row mt-3 row-cols-lg-2 row-cols-md-1">
+                <h4 class="wassupgreen">Elevate your WhatsApp experience by increasing the views on your status effortlessly.</h4>
+                <div class="col shadow col-xs-10 m-3 mb-5 col-sm-9 col-md-8 col-lg-5">
+                    <h2 class="mt-3 text-success">Share your connection in a flash</h2>
+                    <form action="" id="regForm" role="form" class="m-2">
+                        <div class="form-group mb-2">
+                            <label for="userName">Name here:</label>
+                            <input type="text" id="userName" class="form-control" required placeholder="How you want people to view your name">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="userCountry">Country code here:</label>
+                            <input type="text" id="userCountry" class="form-control" required placeholder="Country code">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="userPhone">Your number here:</label>
+                            <input type="text" id="userPhone" class="form-control" required placeholder="Mobile number">
+                        </div>
+                        <button type="submit" class="btn btn-success m-2" id="uploadContact">Upload Now!</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="bg-dark text-light">
+        <div class="container">
+            &nbsp;
+           <div class="row mt-3">
+                <div class="col">
+                    <h3>Preliminaries</h3>
+                    <a href="https://facebook.com">facebook</a>
+                    <p>Contact support at : <a href="mailto:d34calvo@gmail.com">d34calvo@gmail.com</a></p>
+                    <p>Phone : <a href="tel:+254799311413">+254799311413</a></p>
+                    <p>Location<address>99-40223 Kadongo</address></p>
+                    <p><address>Homabay,Kenya</address></p>
+                </div>
+           </div>
+           <center>Designed and developed by Calvince Owino,CEO JalSoft</center>
+           <br><br>
+        </div>
+    </div>
+</body>
+<script src="./assets/js/aos.js"></script>
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/sweetalert2@11.js"></script>
+<script>
+    const regForm = document.getElementById("regForm");
+    regForm.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        Swal.fire({
+                title: 'Please confirm!',
+                text: `Is ${userPhone.value} your phone please?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Regitered',
+                        'Your have been registered successfully you can now download the contact list',
+                        'success'
+                    );
+                } else if (result.isDismissed) {
+                    Swal.fire(
+                        'Cancelled',
+                        'Sorry please try again after validating the right phone number please',
+                        'error'
+                    );
+                }
+            });
+    });
+</script>
+</html>
