@@ -10,6 +10,14 @@
 <link rel="stylesheet" href="./assets/css/aos.css">
 <link rel="stylesheet" href="./assets/css/bootstrap.css">
 <link rel="stylesheet" href="./assets/css/sweetalert2.min.css">
+<style>
+    .prof-pic {
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit: cover;
+}
+</style>
 <body>
     <nav class="navbar navbar-expand-md navbar-success wassupgreen-bg">
         <div class="container-fluid">
@@ -51,6 +59,33 @@
             </div>
             <div class="row mt-3 row-cols-lg-2 row-cols-md-1">
                 <h4 class="wassupgreen">Stay connected with real-time status updates!</h4>
+            </div>
+        </div>
+        <div class="row row-cols-xs-1 mb-5">
+            <h4 class="text-success">Your Profile</h4>
+            <div class="col">
+              <h5 class="text-warning">Manage Your Account</h5>
+              <div class="card border-0 position-relative m-2 mt-4">
+                <img src="./assets/img/programming_web.png" alt="" class="prof-pic">
+              </div>
+            </div>
+            <div class="col">
+                <h4 class="text-success">Your Profile information</h4>
+                <h5 class="wassupgreen">View and update your account details. Keep track of your downloads and playlists, and personalize your experience.</h5> 
+                <div class="card m-3 border-0 text-secondary">
+                    <h5 class="text-info">Your credentials</h5>
+                    <label for="userName">Name:</label>
+                    <span id="userName" class="ms-1">Calvince Owino</span><br>
+                    <label for="userEmail">Email:</label>
+                    <span id="userEmail" class="ms-1">d34calvo@gmail.com</span><br>
+                    <label for="userPhone">Phone:</label>
+                    <span id="userPhone" class="ms-1">+254 799311413</span><br>
+                    <label for="userGender">Gender:</label>
+                    <span id="userGender" class="ms-3">Male</span>
+                </div>
+                <button class="btn btn-primary mt-1">Edit profile</button>
+                <button class="btn btn-success ms-1 me-1 mt-1">Log out</button>
+                <button class="btn-danger btn mt-1">Delete profile</button>
             </div>
         </div>
     </div>

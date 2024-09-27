@@ -59,8 +59,8 @@
                             <input type="text" id="userName" class="form-control" required placeholder="How you want people to view your name">
                         </div>
                         <div class="form-group mb-2">
-                            <label for="userCountry">Country code here:</label>
-                            <input type="text" id="userCountry" class="form-control" required placeholder="Country code">
+                            <label for="countryCode">Country code here:</label>
+                            <input type="text" id="countryCode" class="form-control" required placeholder="Country code">
                         </div>
                         <div class="form-group mb-2">
                             <label for="userPhone">Your number here:</label>
@@ -69,6 +69,9 @@
                         <button type="submit" class="btn btn-success m-2" id="uploadContact">Upload Now!</button>
                     </form>
                 </div>
+                <p class="text-muted mt-3" style="font-style: italic;">
+                    Don’t worry, your phone number won’t end up in some top-secret WhatsApp group where everyone sends memes at 3 AM! 😎✨ By uploading your contact here, you're just one step away from leveling up your WhatsApp status views—and let's be honest, who doesn't want their statuses to be the most talked about? 🌟🙌 So, go ahead, hit that upload button and join the elite crew of status kings and queens! Your future fans are waiting to admire your daily coffee pics and gym selfies. ☕💪 Plus, we promise not to tell anyone about that awkward ‘good morning’ text you accidentally sent last week. 😜 You’re safe with us!
+                  </p>
         </div>
     </div>
 </div>
@@ -122,5 +125,37 @@
                 }
             });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+  const countryCodeElement = document.getElementById('countryCode');
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+  function success(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    const apiUrl = `https://ipapi.co/json/`;
+    
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const countryCode = data.country_calling_code;
+        countryCodeElement.value = countryCode; 
+        countryCodeElement.setAttribute("disabled", "true");
+
+        document.getElementById('userPhone').value = countryCode + " ";
+      })
+      .catch(error => {
+        console.error("Error fetching the country code:", error);
+        alert("Unable to fetch the country code.");
+      });
+  }
+  function error() {
+    alert("Unable to retrieve your location.");
+  }
+});
+
 </script>
 </html>

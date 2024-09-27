@@ -10,6 +10,17 @@
 <link rel="stylesheet" href="./assets/css/aos.css">
 <link rel="stylesheet" href="./assets/css/bootstrap.css">
 <link rel="stylesheet" href="./assets/css/sweetalert2.min.css">
+<style>
+      .high-activity {
+            background-color: #d4edda;
+        }
+        .low-activity {
+            background-color: #f8d7da;
+        }
+        .table {
+            margin-top: 20px;
+        }
+</style>
 <body>
     <nav class="navbar navbar-expand-md navbar-success wassupgreen-bg">
         <div class="container-fluid">
@@ -54,6 +65,128 @@
             </div>
         </div>
     </div>
+    <div class="container mt-5">
+        <h2 class="text-center">Active Contacts</h2>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Average Time Spent (hours)</th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="high-activity">
+                    <td>John Doe</td>
+                    <td>+1 234 567 8900</td>
+                    <td>6</td>
+                    <td>USA</td>
+                    <td><button class="btn btn-success" onclick="addContact('John Doe')">Add</button></td>
+                </tr>
+                <tr class="low-activity">
+                    <td>Jane Smith</td>
+                    <td>+44 123 456 7890</td>
+                    <td>2</td>
+                    <td>UK</td>
+                    <td><button class="btn btn-success" onclick="addContact('Jane Smith')">Add</button></td>
+                </tr>
+                <tr class="high-activity">
+                    <td>Alice Wang</td>
+                    <td>+86 139 1234 5678</td>
+                    <td>5</td>
+                    <td>China</td>
+                    <td><button class="btn btn-success" onclick="addContact('Alice Wang')">Add</button></td>
+                </tr>
+                <tr class="low-activity">
+                    <td>Rahul Sharma</td>
+                    <td>+91 98765 43210</td>
+                    <td>1</td>
+                    <td>India</td>
+                    <td><button class="btn btn-success" onclick="addContact('Rahul Sharma')">Add</button></td>
+                </tr>
+                <tr class="high-activity">
+                    <td>Maria Gonzalez</td>
+                    <td>+52 55 1234 5678</td>
+                    <td>7</td>
+                    <td>Mexico</td>
+                    <td><button class="btn btn-success" onclick="addContact('Maria Gonzalez')">Add</button></td>
+                </tr>
+                <tr class="low-activity">
+                    <td>David Nkosi</td>
+                    <td>+27 21 123 4567</td>
+                    <td>2</td>
+                    <td>South Africa</td>
+                    <td><button class="btn btn-success" onclick="addContact('David Nkosi')">Add</button></td>
+                </tr>
+                <tr class="high-activity">
+                    <td>Chinedu Obi</td>
+                    <td>+234 802 123 4567</td>
+                    <td>8</td>
+                    <td>Nigeria</td>
+                    <td><button class="btn btn-success" onclick="addContact('Chinedu Obi')">Add</button></td>
+                </tr>
+                <tr class="low-activity">
+                    <td>Amina Traore</td>
+                    <td>+235 66 123 4567</td>
+                    <td>1</td>
+                    <td>Chad</td>
+                    <td><button class="btn btn-success" onclick="addContact('Amina Traore')">Add</button></td>
+                </tr>
+                <tr class="high-activity">
+                    <td>Li Wei</td>
+                    <td>+86 138 1234 5678</td>
+                    <td>5</td>
+                    <td>China</td>
+                    <td><button class="btn btn-success" onclick="addContact('Li Wei')">Add</button></td>
+                </tr>
+                <tr class="low-activity">
+                    <td>Susan Mkhize</td>
+                    <td>+27 83 123 4567</td>
+                    <td>2</td>
+                    <td>South Africa</td>
+                    <td><button class="btn btn-success" onclick="addContact('Susan Mkhize')">Add</button></td>
+                </tr>
+                <tr class="high-activity">
+                    <td>Tom Jones</td>
+                    <td>+1 555 555 5555</td>
+                    <td>9</td>
+                    <td>USA</td>
+                    <td><button class="btn btn-success" onclick="addContact('Tom Jones')">Add</button></td>
+                </tr>
+                <tr class="low-activity">
+                    <td>Kumari Patel</td>
+                    <td>+91 91234 56789</td>
+                    <td>3</td>
+                    <td>India</td>
+                    <td><button class="btn btn-success" onclick="addContact('Kumari Patel')">Add</button></td>
+                </tr>
+                <tr class="high-activity">
+                    <td>Aisha Ahmed</td>
+                    <td>+254 700 000 005</td>
+                    <td>6</td>
+                    <td>Kenya</td>
+                    <td><button class="btn btn-success" onclick="addContact('Aisha Ahmed')">Add</button></td>
+                </tr>
+                <tr class="low-activity">
+                    <td>Pablo Santos</td>
+                    <td>+34 612 345 678</td>
+                    <td>2</td>
+                    <td>Spain</td>
+                    <td><button class="btn btn-success" onclick="addContact('Pablo Santos')">Add</button></td>
+                </tr>
+                <tr class="high-activity">
+                    <td>Fatima el-Mahdi</td>
+                    <td>+212 6 1234 5678</td>
+                    <td>5</td>
+                    <td>Morocco</td>
+                    <td><button class="btn btn-success" onclick="addContact('Fatima el-Mahdi')">Add</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <div class="bg-dark text-light">
         <div class="container">
             &nbsp;
@@ -72,7 +205,19 @@
         </div>
     </div>
 </body>
+<script>
+    function addContact(name) {
+        swal({
+            title: "Download Started!",
+            text: `${name} has been added to your download list. Check your Downloads folder!`,
+            icon: "success",
+            button: "Okay",
+        });
+    }
+</script>
 <script src="./assets/js/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
 <script src="./assets/js/sweetalert2@11.js"></script>
 </html>
